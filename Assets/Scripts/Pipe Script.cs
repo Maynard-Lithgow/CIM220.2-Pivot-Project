@@ -17,11 +17,15 @@ public class PipeScript : MonoBehaviour
     }
     public void IncreaseSpeed()
     {
-        if (speed <= 14)
+        if (speed <= 16)
         {
-            speed += 0.3f;
+            speed += 0.4f;
         }
-        else if (speed >= 25)
+        else if (speed > 16.1f && speed < 25)
+        {
+            speed += 0.25f;
+        }
+        else if (speed >= 20)
         {
             return;
         }

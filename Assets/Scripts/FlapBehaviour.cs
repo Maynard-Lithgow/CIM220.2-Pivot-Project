@@ -12,6 +12,9 @@ public class FlapBehaviour : MonoBehaviour
     public Transform myTransform;
     public Vector3 myVector3;
 
+    public float yCoordinate;
+
+    public AnimationManager animationManager;
 
     private void Start()
     {
@@ -23,17 +26,17 @@ public class FlapBehaviour : MonoBehaviour
         myVector3 = myTransform.position;
         if (myVector3.x <= -3.6f)
         {
-            Debug.Log("IT SHOULD BE HAPPENING");
+            //Debug.Log("IT SHOULD BE HAPPENING");
             miniGamer.GameOver();
         }
-        else if (myVector3.y >= -0.6f)
+        else if (myVector3.y <= -4.08f)
         {
-            Debug.Log("IT SHOULD BE HAPPENING");
+            //Debug.Log("IT SHOULD BE HAPPENING Y COORDINATE -4.08f");
             miniGamer.GameOver();
         }
         else if(myVector3.x <= -4.08f)
         {
-            Debug.Log("IT SHOULD BE HAPPENING");
+            //Debug.Log("IT SHOULD BE HAPPENING");
             miniGamer.GameOver();
         }
     }

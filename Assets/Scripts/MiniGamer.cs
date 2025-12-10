@@ -21,7 +21,7 @@ public class MiniGamer : MonoBehaviour
     }
     public void GameOver()
     {
-        Debug.Log("Game over triggered");
+        //Debug.Log("Game over triggered");
         gameOver.enabled = true;
     }
     public void RestartGame()

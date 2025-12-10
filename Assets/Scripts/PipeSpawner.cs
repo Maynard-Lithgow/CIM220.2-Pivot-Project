@@ -21,17 +21,21 @@ public class PipeSpawner : MonoBehaviour
         if (timer > maxTime)
         {
             SpawnPipe();
-            if (maxTime >= 1.5f)
+            if (maxTime >= 2f)
+            {
+                maxTime -= 0.45f;
+            }
+            else if (maxTime < 1.99f && maxTime > 0.9f)
             {
                 maxTime -= 0.3f;
             }
-            else if (maxTime < 1.5f && maxTime > 0.3f)
+            else if (maxTime <= 0.9 && maxTime > 0.41f)
             {
-                maxTime -= 0.08f;
+                maxTime -= 0.09f;
             }
-            else if (maxTime <= 0.3f)
+            else if (maxTime <= 0.6f)
             {
-                maxTime = 0.3f;
+                maxTime = 0.6f;
             }
             timer = 0;
         }

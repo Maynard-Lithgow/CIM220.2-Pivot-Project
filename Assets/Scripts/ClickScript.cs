@@ -11,6 +11,8 @@ public class ClickScript : MonoBehaviour
     public GameObject badClick3;
     public FlapBehaviour flapBehaviour;
 
+    public AnimationManager animationManager;   
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,13 +31,15 @@ public class ClickScript : MonoBehaviour
         {
             raycastHit = Physics2D.Raycast(mouseRay.origin, mouseRay.direction);
             clickObject = raycastHit ? raycastHit.collider.transform : null;
-            Debug.Log("Clicked something " + clickObject);
+            //Debug.Log("Clicked something " + clickObject);
 
             if (clickObject == badClick1 || clickObject == badClick2 || clickObject == badClick3)
             {
                 //clickObject.GetComponent<SpriteRenderer>().color = Color.red;
-                Debug.Log("Good click");        //This works backwards for some reason. Don't care
+                //Debug.Log("Good click");        //This works backwards for some reason. Don't care
                 flapBehaviour.Flap();
+
+                animationManager.ResetHappyTimer();
             }
         }
 
